@@ -14,4 +14,11 @@
         app:showAsAction="ifRoom|withText"
         />
 
+    <item
+        android:id="@+id/accionAjustes"
+        android:title="@string/opcionAjustes"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom|withText"
+        />
 </menu>

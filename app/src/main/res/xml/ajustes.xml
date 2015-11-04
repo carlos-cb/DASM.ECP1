@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen
+            android:key="ajustesGrupo"
+            android:title="@string/ajustes"
+            android:summary="@string/comentarioInicial"
+            android:persistent="false">
+        <ListPreference
+            android:title="@string/ajustes"
+            android:selectable="false"/>
+        <CheckBoxPreference
+            android:key="opcionesCheckBox"
+            android:title="@string/almacenamientoSD"
+            android:summary="@string/comentarioSD"
+            android:defaultValue="false" />
+        <EditTextPreference
+            android:key="opcionesNombre"
+            android:title="@string/nombreDelFichero"
+            android:defaultValue="@string/ejemploDelNombre"
+            android:summary="@string/comentarioNombre"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:maxLines="1"
+            />
+    </PreferenceScreen>
+
+</PreferenceScreen>

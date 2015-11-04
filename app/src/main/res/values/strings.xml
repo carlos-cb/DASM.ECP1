@@ -7,5 +7,14 @@
     <string name="txtOnStart">Pulsa para mostrar el contenido del fichero</string>
     <string name="txtFicheroVacio">El fichero está vacío</string>
     <string name="txtErrorEscribir">No puedo escribir en la memoria externa</string>
+    <string name="opcionAjustes">Ajustes</string>
+    <string name="almacenamientoSD">Almacenamiento en tarjeta SD</string>
+    <string name="comentarioSD">Si se activa esta opcion se almacenara la informacion en la tarjeta SD (si esta disponible)</string>
+    <string name="nombreDelFichero">Nombre del fichero</string>
+    <string name="comentarioNombre">Nombre del fichero en el que se guardara la informacion</string>
+    <string name="ajustes">Opciones de Almacenamiento</string>
+    <string name="comentarioInicial">Opciones relativas al almacenamiento de ficheros</string>
+    <string name="ejemploDelNombre">mi_fichero_miw.txt</string>
+
 
 </resources>

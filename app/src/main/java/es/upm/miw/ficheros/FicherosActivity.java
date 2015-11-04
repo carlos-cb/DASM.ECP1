@@ -1,5 +1,7 @@
 package es.upm.miw.ficheros;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,7 @@ public class FicherosActivity extends AppCompatActivity {
     EditText lineaTexto;
     Button botonAniadir;
     TextView contenidoFichero;
+    boolean SDactivo;
 
 
     @Override
@@ -57,9 +60,8 @@ public class FicherosActivity extends AppCompatActivity {
     public void accionAniadir(View v) {
         /** Comprobar estado SD card **/
         String estadoTarjetaSD = Environment.getExternalStorageState();
-        try {  // Añadir al fichero
+        try {
             if (estadoTarjetaSD.equals(Environment.MEDIA_MOUNTED)) {  /** SD card **/
-                // FileOutputStream fos = openFileOutput(NOMBRE_FICHERO, Context.MODE_APPEND);
                 FileOutputStream fos = new FileOutputStream(RUTA_FICHERO, true);
                 fos.write(lineaTexto.getText().toString().getBytes());
                 fos.write('\n');
@@ -72,6 +74,19 @@ public class FicherosActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void accionAniadirLocal(View v) {
+        try {
+            FileOutputStream fos = openFileOutput(NOMBRE_FICHERO, Context.MODE_APPEND);
+            fos.write(lineaTexto.getText().toString().getBytes());
+            fos.write('\n');
+            fos.close();
+            mostrarContenido(contenidoFichero);
+        } catch (Exception e) {
+            Log.e("FILE I/O", "ERROR: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -132,6 +147,9 @@ public class FicherosActivity extends AppCompatActivity {
             case R.id.accionVaciar:
                 borrarContenido();
                 break;
+            case R.id.accionAjustes:
+                mostrarAjustes();
+                break;
         }
 
         return true;
@@ -158,4 +176,8 @@ public class FicherosActivity extends AppCompatActivity {
         }
     }
 
+    public void mostrarAjustes(){
+        Intent ajustes = new Intent(this, SettingsActivity.class);
+        startActivity(ajustes);
+    }
 }
