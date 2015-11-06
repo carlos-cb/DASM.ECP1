@@ -1,7 +1,9 @@
 package es.upm.miw.ficheros;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -29,7 +31,7 @@ public class FicherosActivity extends AppCompatActivity {
     Button botonAniadir;
     TextView contenidoFichero;
     boolean SDactivo;
-
+    ActionBar actionbar;
 
     @Override
     protected void onStart() {
@@ -38,6 +40,7 @@ public class FicherosActivity extends AppCompatActivity {
         this.SDactivo = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("opcionesCheckBox", true);
         this.NOMBRE_FICHERO = PreferenceManager.getDefaultSharedPreferences(this).getString("opcionesNombre", "mi_fichero_miw.txt");
         RUTA_FICHERO = getExternalFilesDir(null) + "/" + NOMBRE_FICHERO;
+        actionbar = getActionBar();
     }
 
     @Override
@@ -189,16 +192,32 @@ public class FicherosActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            // case 1:
             case R.id.accionVaciar:
                 borrarContenido();
                 break;
             case R.id.accionAjustes:
                 mostrarAjustes();
                 break;
+            case R.id.menu_destino:
+                openFilesDestino(this);
+                break;
         }
 
         return true;
+    }
+
+    public void openFilesDestino(Context context){
+        File file = context.getExternalFilesDir(null);
+        Log.i("url", file.toString());
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Uri uri = Uri.fromFile(file);
+        intent.setDataAndType(uri, "*/*");
+        try {
+            startActivity(intent);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public void borrarContenido(){
@@ -248,4 +267,5 @@ public class FicherosActivity extends AppCompatActivity {
         Intent ajustes = new Intent(this, SettingsActivity.class);
         startActivity(ajustes);
     }
+
 }

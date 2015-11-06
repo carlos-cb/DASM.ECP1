@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sesión 4: Ficheros</string>
+    <string name="app_name">Ficheros</string>
 
     <string name="botónAñadir">Añadir</string>
     <string name="opcionVaciar">Vaciar Fichero</string>
@@ -15,6 +15,10 @@
     <string name="ajustes">Opciones de Almacenamiento</string>
     <string name="comentarioInicial">Opciones relativas al almacenamiento de ficheros</string>
     <string name="ejemploDelNombre">mi_fichero_miw.txt</string>
+    <string name="gestionar">Gestionar los ficheros</string>
+    <string name="comentarioGestionar">Se mostra los ficheros generados y permite eliminar todos o solo algunos de los mismos</string>
+    <string name="mostrar">Mostra todos los ficheros generados de la memoria interna y externa</string>
+    <string name="eliminar">Eliminar todos los ficheros de datos propios de la aplicación</string>
 
 
 </resources>

@@ -10,8 +10,7 @@
         android:id="@+id/accionVaciar"
         android:title="@string/opcionVaciar"
         android:icon="@android:drawable/ic_menu_delete"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom|withText"
+        app:showAsAction="always"
         />
 
     <item
@@ -19,6 +18,15 @@
         android:title="@string/opcionAjustes"
         android:icon="@android:drawable/ic_menu_preferences"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom|withText"
+        app:showAsAction="always"
         />
+
+    <item
+        android:id="@+id/menu_destino"
+        android:title="Indique destino"
+        android:icon="@android:drawable/ic_menu_search"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        />
+
 </menu>

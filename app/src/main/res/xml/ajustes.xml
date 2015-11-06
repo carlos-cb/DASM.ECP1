@@ -2,10 +2,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceScreen
-            android:key="ajustesGrupo"
-            android:title="@string/ajustes"
-            android:summary="@string/comentarioInicial"
-            android:persistent="false">
+        android:key="ajustesGrupo"
+        android:title="@string/ajustes"
+        android:summary="@string/comentarioInicial"
+        android:persistent="false">
         <ListPreference
             android:title="@string/ajustes"
             android:selectable="false"/>
@@ -23,6 +23,23 @@
             android:singleLine="true"
             android:maxLines="1"
             />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="gestionar"
+        android:title="@string/gestionar"
+        android:summary="@string/comentarioGestionar">
+        <ListPreference
+            android:title="@string/gestionar"
+            android:selectable="false"/>
+        <Preference
+            android:key="mostrar"
+            android:title="Mostrar"
+            android:summary="@string/mostrar" />
+        <Preference
+            android:key="eliminar"
+            android:title="Eliminar"
+            android:summary="@string/eliminar" />
+
     </PreferenceScreen>
 
 </PreferenceScreen>
